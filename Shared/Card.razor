@@ -1,0 +1,29 @@
+﻿<div class="@Class mb-2 bg-slate-600 dark:bg-zinc-800 text-white dark:text-gray-400">
+    <div class="mx-2 md:mx-5 py-3">
+
+        @* Title *@
+        @if (Title is not null)
+        {
+            <div class="my-2 justify-center">
+                <p class="text-3xl ">@Title</p>
+            </div>
+        }
+
+        @* Content *@
+        <div>
+            @Content
+        </div>
+
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment? Title { get; set; }
+
+    [Parameter]
+    public RenderFragment? Content { get; set; }
+
+    [Parameter]
+    public string? Class { get; set; }
+}

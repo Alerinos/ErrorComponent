@@ -1,0 +1,32 @@
+﻿<div class="@Class @_sm @_md @_lg @_xl @_xxl basis-full mb-3 md:px-2">
+    @ChildContent
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public string? Class { get; set; }
+
+    private string _sm = string.Empty;
+    private string _md = string.Empty;
+    private string _lg = string.Empty;
+    private string _xl = string.Empty;
+    private string _xxl = string.Empty;
+
+    [Parameter]
+    public string? sm { set => _sm = $"sm:{value}"; }
+
+    [Parameter]
+    public string? md { set => _md = $"md:{value}"; }
+
+    [Parameter]
+    public string? lg { set => _lg = $"lg:{value}"; }
+
+    [Parameter]
+    public string? xl { set => _xl = $"xl:{value}"; }
+
+    [Parameter]
+    public string? xxl { set => _xxl = $"2xl:{value}"; }
+}
